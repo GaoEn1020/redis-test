@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import pie.data.cache.Pedis;
@@ -15,7 +16,8 @@ import pie.data.cache.redis.common.ShardOption;
 import javax.annotation.PostConstruct;
 
 @Service
-@PropertySource(value = "cache.properties", encoding = "utf-8")
+@Configuration
+@PropertySource(value = "./config/cache.properties", encoding = "utf-8")
 public class TestRedisService {
 
     private static final Logger logger = LoggerFactory.getLogger(TestRedisService.class);
